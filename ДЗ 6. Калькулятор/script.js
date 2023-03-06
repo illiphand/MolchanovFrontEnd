@@ -1,7 +1,24 @@
-const a = prompt('Первое число:');
-const b = prompt('Второе число:');
-const c = prompt('Третье число:');
+const sim = prompt('Какое действие желаете выполнить? (Варианты: +, -, *, /)');
 
-const avg = (+a+(+b)+(+c))/3;
+const a = prompt('Впишите первое число');
+const b = prompt('Впишите второе число');
+let alertMsg = '';
+switch (sim) {
+    case "+":
+        alertMsg = +a + +b;
+        break;
+    case "-":
+        alertMsg = a - b;
+        break;
+    case "*":
+        alertMsg = a * b;
+        break;
+    case "/":
+        alertMsg = a / b;
+        break;
+    default:
+        alertMsg = 'Некорректно внесено действие'
+        break;
+}
 
-alert(`Среднее твоих 3х чисел - ${avg}`);
+alert(alertMsg);
