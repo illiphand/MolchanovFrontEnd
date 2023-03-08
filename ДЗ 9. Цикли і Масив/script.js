@@ -7,9 +7,11 @@ const array = [16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -6
 let sumPart1 = 0;
 let countPart1 = 0;
 
-for(let i = 0; i < array.length; i++) {
-    sumPart1+=array[i];
-    countPart1++;
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
+        sumPart1 += array[i];
+        countPart1++;
+    }
 }
 console.group('Знайти суму та кількість позитивних елементів')
 console.log(`сумa позитивних елементів = ${sumPart1}; Kількість позитивних елементів = ${countPart1}`)
@@ -20,8 +22,8 @@ console.groupEnd();
 let elemValuePart2 = null;
 let elemIndexPart2 = -1;
 
-for(let i = 0; i < array.length; i++) {
-    if(elemValuePart2 === null || elemValuePart2 > array[i]){
+for (let i = 0; i < array.length; i++) {
+    if (elemValuePart2 === null || elemValuePart2 > array[i]) {
         elemValuePart2 = array[i];
         elemIndexPart2 = i;
     }
@@ -35,8 +37,8 @@ console.groupEnd();
 let elemValuePart3 = null;
 let elemIndexPart3 = -1;
 
-for(let i = 0; i < array.length; i++) {
-    if(elemValuePart3 === null || elemValuePart3 < array[i]){
+for (let i = 0; i < array.length; i++) {
+    if (elemValuePart3 === null || elemValuePart3 < array[i]) {
         elemValuePart3 = array[i];
         elemIndexPart3 = i;
     }
@@ -50,8 +52,8 @@ console.groupEnd();
 
 let countNegative = 0;
 
-for(let i = 0; i < array.length; i++) {
-    if(array[i] < 0){
+for (let i = 0; i < array.length; i++) {
+    if (array[i] < 0) {
         countNegative++;
     }
 }
@@ -64,12 +66,12 @@ console.groupEnd();
 
 let multiTotal = 1;
 
-for(let i = 0; i < array.length; i++) {
-    if(array[i] > 0){
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) {
         multiTotal *= array[i];
     }
 }
-multiTotal = multiTotal === 1? 0:multiTotal;
+multiTotal = multiTotal === 1 ? 0 : multiTotal;
 
 
 console.group('Знайти добуток позитивних елементів')
